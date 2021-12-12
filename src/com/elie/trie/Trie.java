@@ -1,6 +1,6 @@
-package com.elie;
+package com.elie.trie;
 
-class Trie {
+public class Trie {
 
     TrieNode root;
     public Trie() {
