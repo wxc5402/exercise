@@ -1,6 +1,8 @@
 package com.elie.dsu;
 
 public class DSU {
+    //disjoint set(union-find)
+
     int[] parent;
     public DSU(int N) {
         parent = new int[N];
