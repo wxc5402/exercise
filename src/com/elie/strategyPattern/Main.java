@@ -1,13 +1,4 @@
-package com.elie;
-
-import com.elie.heapify.Heapify;
-import com.elie.strategyPattern.Context;
-import com.elie.strategyPattern.OperationAdd;
-import com.elie.strategyPattern.OperationMultiply;
-import com.elie.strategyPattern.OperationSubstract;
-
-import java.util.*;
-import java.util.stream.Collectors;
+package com.elie.strategyPattern;
 
 public class Main {
 

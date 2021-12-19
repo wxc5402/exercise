@@ -4,3 +4,9 @@
 /.idea/modules.xml
 /.idea/project-template.xml
 /.idea/vcs.xml
+/out/production/exercise/com/elie/Main.class
+/out/production/exercise/com/elie/trie/Trie.class
+/out/production/exercise/com/elie/trie/TrieNode.class
+/out/production/exercise/com/elie/wordDic/TrieNode.class
+/.idea/uiDesigner.xml
+/out/production/exercise/com/elie/wordDic/WordDictionary.class
