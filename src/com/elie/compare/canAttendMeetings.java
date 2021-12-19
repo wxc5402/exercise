@@ -8,7 +8,6 @@ public class canAttendMeetings {
     public static void main (String[] args) {
         int[][] nums = {{0,5},  {15,20}, {5,10}};
         boolean ret = canAttendMeetings(nums);
-
         int k = 0;
     }
 
