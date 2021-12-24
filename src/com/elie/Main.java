@@ -12,16 +12,13 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
+        Queue<Integer> q1 = new LinkedList<>();
 
-        Context context = new Context(new OperationAdd());
-        int result = context.executeStrategy(3, 2);
 
-        context = new Context(new OperationSubstract());
-        result = context.executeStrategy(4, 2);
+        q1.offer(2);
+        q1.offer(3);
+        q1.offer(4);
 
-        context = new Context(new OperationMultiply());
-        result = context.executeStrategy(5, 2);
-
-        System.out.println(result);
+        System.out.println(q1.peek());
     }
 }
