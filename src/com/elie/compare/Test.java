@@ -15,6 +15,12 @@ public class Test {
         Arrays.sort(nums, new MyComparator2());
         System.out.println(Arrays.toString(nums));
 
+
+        Integer[] nums1 = {2, 3, 1};
+
+        Arrays.sort(nums1, (a, b)-> a - b);
+
+        int j = 0;
     }
 }
 
