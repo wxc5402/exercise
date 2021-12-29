@@ -1,37 +1,68 @@
 package com.elie.linkedList;
 
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Stack;
 
 public class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        Stack<Integer> s1 = new Stack<>();
-        Stack<Integer> s2 = new Stack<>();
 
-        while(l1 != null) {
-            s1.push(l1.val);
-            l1 = l1.next;
+    public static void main (String[] args) {
+        
+    }
+
+    public static ListNode mergeKLists(ListNode[] lists) {
+        ListNode dummy = new ListNode(0);
+        PriorityQueue<ListNode> q = new PriorityQueue<>((a, b)->a.val - b.val);
+
+        for (int i = 0; i < lists.length; i++) {
+            ListNode node = lists[i];
+            if(lists[i] != null) {
+                q.offer(lists[i]);
+            }
+            /*while(node != null) {
+                q.offer(node);
+                node = node.next;
+            }*/
         }
 
-        while(l2 != null) {
-            s2.push(l2.val);
-            l2 = l2.next;
+        ListNode curr = dummy;
+        while (!q.isEmpty()) {
+            curr.next = q.poll();
+            curr = curr.next;
+            if (q.isEmpty()) {
+                break;
+            }
+
+            if (curr.next != null) {
+                q.offer(curr.next);
+            }
+        }
+        return dummy.next;
+    }
+
+    public ListNode reverse(ListNode head) {
+        ListNode prev = null;
+        while (head  != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
         }
 
-        int carry = 0;
-        ListNode newHead = null;
-        while (!s1.isEmpty() || !s2.isEmpty() || carry != 0) {
-            int val1 = s1.isEmpty() ? 0 : s1.pop();
-            int val2 = s2.isEmpty() ? 0 : s2.pop();
+        return prev;
+    }
 
-            int sum = val1 + val2 + carry;
-            ListNode cur = new ListNode(sum % 10);
-            carry = sum / 10;
-            cur.next = newHead;
-            newHead = cur;
+
+
+    private ListNode endOfFirstHalf(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
         }
-
-        return newHead;
+        return slow;
     }
 }
 
