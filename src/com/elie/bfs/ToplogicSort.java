@@ -34,4 +34,15 @@ public class ToplogicSort {
         }
         return count == numCourses;
     }
+
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<>();
+        dfs(result, new ArrayList<>(), n, k, 1);
+        return result;
+    }
+
+    private void dfs(List<List<Integer>> result, ArrayList<Object> objects, int n, int k, int i) {
+    }
+
+
 }
