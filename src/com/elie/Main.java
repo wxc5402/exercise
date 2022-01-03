@@ -5,6 +5,7 @@ import com.elie.strategyPattern.Context;
 import com.elie.strategyPattern.OperationAdd;
 import com.elie.strategyPattern.OperationMultiply;
 import com.elie.strategyPattern.OperationSubstract;
+import com.elie.tree.TreeNodeUtil;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,13 +13,9 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        Queue<Integer> q1 = new LinkedList<>();
 
+       int[] root = {1,2,3,4,5,6,7,8,9};
 
-        q1.offer(2);
-        q1.offer(3);
-        q1.offer(4);
-
-        System.out.println(q1.peek());
+        System.out.println(TreeNodeUtil.createTreeNode(root));
     }
 }
