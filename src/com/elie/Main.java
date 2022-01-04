@@ -18,9 +18,9 @@ public class Main {
        Integer[] root = {1,2,3,4,5,6,7,8,9};
        TreeNode rootHead = TreeNodeUtil.createTreeNode(root);
        //TreeNodeUtil.prettyPrintTree(rootHead);
-        String a = "ddd";
-        String[] dd = a.split(" ");
-        System.out.println(lengthOfLastWord("HELLO WORLD       "));
+        String a = "http://leetcode.com/problems";
+
+        System.out.println(a.substring(7));
     }
 
 
@@ -67,5 +67,28 @@ public class Main {
             count++;
         }
         return count;
+    }
+
+    public static String compressString(String S) {
+        int[] arr = new int[128];
+
+        for (int index = 0; index < S.length(); index++) {
+            Character ch = S.charAt(index);
+            arr[ch - 'a']++;
+        }
+
+        Map<Character, Boolean> map = new HashMap<>();
+        StringBuffer ret = new StringBuffer();
+        for (int index = 0; index < S.length(); index++) {
+            if(map.containsKey(S.charAt(index))) {
+                continue;
+            } else {
+                ret.append(S.charAt(index));
+                ret.append(arr[S.charAt(index) - 'a']);
+                map.put(S.charAt(index), true);
+            }
+        }
+
+        return ret.toString();
     }
 }
