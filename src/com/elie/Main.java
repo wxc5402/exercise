@@ -38,6 +38,16 @@ public class Main {
         return retStr.toString();
     }
 
+    private String getHostName(String url) {
+        url = url.substring(7);
+        if (url.contains("/")) {
+            int end = url.indexOf('/'); // 第一次出现斜杠的索引位置
+            return url.substring(0, end);
+        } else {
+            return url;
+        }
+    }
+
     private String reverseAWords(String str) {
         if (str == null || str.length() == 0) {
             return "";
